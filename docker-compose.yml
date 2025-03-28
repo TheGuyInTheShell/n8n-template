@@ -1,5 +1,6 @@
 version: '3.8'
 
+
 services:
   n8n:
     build: .
@@ -7,7 +8,7 @@ services:
       - "5678:5678"
     environment:
       - N8N_PORT=${N8N_PORT:-5678}
-      - N8N_PROTOCOL=${N8N_PROTOCOL:-https}
+      - N8N_PROTOCOL=https
       - N8N_SECURE_COOKIE=${N8N_SECURE_COOKIE:-false}
       - N8N_HOST=${N8N_HOST:-localhost}
       - N8N_ENCRYPTION_KEY=${ENCRYPTION_KEY}  # Obligatorio
