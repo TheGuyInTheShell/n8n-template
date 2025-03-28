@@ -18,6 +18,10 @@ services:
       - DB_POSTGRESDB_PASSWORD=${DB_PASSWORD}  # Obligatorio
       - DB_POSTGRESDB_HOST=${DB_HOST:-postgres}
       - DB_POSTGRESDB_PORT=${DB_PORT:-5432}
+
+      - N8N_DB_SSL=true  # Obligatorio para Render.io
+      - NODE_TLS_REJECT_UNAUTHORIZED=0  # Solo para testing (elimínalo después)
+      - DEBUG=pg*, sequelize*
     volumes:
       - n8n_data:/home/node/.n8n
     networks:
