@@ -5,14 +5,14 @@ services:
   n8n:
     build: .
     ports:
-      - "5678:5678"
+      - "80:5678"
     environment:
       - N8N_PORT=${N8N_PORT:-5678}
       - N8N_PROTOCOL=https
       - N8N_SECURE_COOKIE=${N8N_SECURE_COOKIE:-false}
       - N8N_HOST=${N8N_HOST:-localhost}
       - N8N_ENCRYPTION_KEY=${ENCRYPTION_KEY}  # Obligatorio
-      - WEBHOOK_URL=${WH_URL}
+      - WEBHOOK_URL=https://n8n-template.onrender.com/webhook
       # Configuración de la base de datos
       - DB_TYPE=postgresdb
       - DB_POSTGRESDB_DATABASE=${DB_NAME:-n8n}
