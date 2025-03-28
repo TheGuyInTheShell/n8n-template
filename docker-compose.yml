@@ -11,6 +11,7 @@ services:
       - N8N_SECURE_COOKIE=${N8N_SECURE_COOKIE:-false}
       - N8N_HOST=${N8N_HOST:-localhost}
       - N8N_ENCRYPTION_KEY=${ENCRYPTION_KEY}  # Obligatorio
+      - WEBHOOK_URL=${WH_URL}
       # Configuración de la base de datos
       - DB_TYPE=postgresdb
       - DB_POSTGRESDB_DATABASE=${DB_NAME:-n8n}
